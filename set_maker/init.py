@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser(description="Init words")
     parser.add_argument("--target_language", type=str, required=True)
     parser.add_argument("--native_language", type=str, required=True)
-    parser.add_argument("--chunk_size_init", type=int, required=True)
+    parser.add_argument("--chunk_size", type=int, required=True)
     parser.add_argument("--word_bank_path", type=str, required=True)
     parser.add_argument("--api_url", type=str, default="")
     parser.add_argument("--api_key_env", type=str, default="")
@@ -23,7 +23,7 @@ def main():
     with open(os.path.join(script_dir, "prompts", "init.md"), "r", encoding="utf-8") as f:
         prompt_template = f.read()
 
-    chunks = [words[i:i + args.chunk_size_init] for i in range(0, len(words), args.chunk_size_init)]
+    chunks = [words[i:i + args.chunk_size] for i in range(0, len(words), args.chunk_size)]
     
     inputs = []
     for chunk in chunks:

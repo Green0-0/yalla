@@ -8,9 +8,9 @@ def main():
     parser = argparse.ArgumentParser(description="Generate sentences for words")
     parser.add_argument("--target_language", type=str, required=True)
     parser.add_argument("--native_language", type=str, required=True)
-    parser.add_argument("--chunk_size_init", type=int, required=True)
+    parser.add_argument("--chunk_size", type=int, required=True)
     parser.add_argument("--input_file", type=str, default="sets/words.json")
-    parser.add_argument("--output_file", type=str, default="sets/words_with_sentences.json")
+    parser.add_argument("--output_file", type=str, default="sets/final.json")
     parser.add_argument("--api_url", type=str, default="")
     parser.add_argument("--api_key_env", type=str, default="")
     parser.add_argument("--model", type=str, default="")
@@ -32,7 +32,7 @@ def main():
     if args.shuffle:
         random.shuffle(indices)
 
-    chunks_indices = [indices[i:i + args.chunk_size_init] for i in range(0, len(indices), args.chunk_size_init)]
+    chunks_indices = [indices[i:i + args.chunk_size] for i in range(0, len(indices), args.chunk_size)]
     
     inputs = []
     for chunk in chunks_indices:
