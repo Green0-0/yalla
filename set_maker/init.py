@@ -12,7 +12,7 @@ def main():
     parser.add_argument("--api_url", type=str, default="")
     parser.add_argument("--api_key_env", type=str, default="")
     parser.add_argument("--model", type=str, default="")
-    parser.add_argument("--output_file", type=str, default="words.json")
+    parser.add_argument("--output_file", type=str, default="sets/words.json")
 
     args = parser.parse_args()
 
