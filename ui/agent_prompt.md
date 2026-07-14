@@ -22,7 +22,7 @@ The input lesson format is a json list of dictionaries with the following struct
     ...
 ]
 ```
-The elements in each dict, asides from the sentence (which will be seperately handled) will be referred to as aspects of the word. The word is an aspect of itself.
+The elements in each dict, asides from the sentence (which will be seperately handled) will be referred to as aspects of the word. The word is an aspect of itself. Any of the elements in the dict (the aspects) may be empty, asides from the word itself. In the extreme case, it is possible every single word in the list is missing a specific aspect (or multiple specific aspects). Also note that the list is ordered in the order the words should be taught. 
 
 The ultimate goal is to teach the user everything in the given lesson; your app should have an entrypoint where the user can create lessons by uploading or pasting json, export their entire user data as a json (for backup), and import previous user data. They should also see a card for each lesson they have created and generic tracking statistics. The user can also delete lessons or reset their progress.
 
