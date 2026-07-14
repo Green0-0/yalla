@@ -4,7 +4,7 @@ Here is a list of words in {{target_language}}:
 Here is a word bank:
 {{word_bank}}
 
-You are in charge of creating a dataset for someone learning the language {{target_language}}, noting that their native language is {{native_language}}. This dataset will be passed into an educational app that teaches them the language (think Duolingo). For each word in the word bank, create a short exert (ie: 1-3 sentences) that uses the word, with the remaining words in the exert from the word list if possible. This means that you will have the same number of exerts as words in the word bank.
+You are in charge of creating a dataset for someone learning the language {{target_language}}, noting that their native language is {{native_language}}. This dataset will be passed into an educational app that teaches them the language (think Duolingo). For each word in the word bank, create a natural sounding and interesting exert of up to 3 sentences that uses the word (and other words), with the remaining words in the exert from the word list if possible. This means that you will have the same number of exerts as words in the word bank.
 
 Your output format is a csv file (where the order of the rows is the order the words should be learned in, and make sure you have the csv header row), with the following columns:
 exert in {{target_language}} | {{native_language}} translation
@@ -24,8 +24,8 @@ exert | translation
 For example, if you were requested to do spanish, you might output something like
 ```
 exert | translation
-El[The] gato[cat] duerme[sleeps]. | The cat sleeps.
-El[The] perro[dog] corre[runs] rápido[fast]. | The dog runs fast.
-El[The] gato[cat] corre[runs]. El[The] perro[dog] duerme[sleeps]. El[The] gato[cat] es[is] rápido[fast]. | The cat runs. The dog sleeps. The cat is fast.
+El[The] fantasma[ghost] viejo[old] lee[reads] un[a] libro[book]. | The old ghost reads a book.
+La[The] biblioteca[library] está[is] oscura[dark]. Nosotros[We] leemos[read] en[in] silencio[silence]. | The library is dark. We read in silence.
+Tú[You] no[not] debes[must] susurrar[whisper] aquí[here]. El[The] bibliotecario[librarian] está[is] enojado[angry]. Él[He] tiene[has] orejas[ears] grandes[big]. | You must not whisper here. The librarian is angry. He has big ears.
 ```
 Though obviously, your requested language might not be spanish.

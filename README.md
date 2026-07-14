@@ -20,5 +20,5 @@ vllm serve google/gemma-4-31B-it \
 ```
 Or whatever model you prefer.
 5.
-``python set_maker/init.py --target_language japanese --native_language english --chunk_size 50 --word_bank_path word_banks/japanese.csv --api_url http://localhost:8000/v1``, replacing api url with your url and the language/word bank with the appropriate values.
+``python set_maker/init.py --target_language japanese --native_language english --chunk_size 30 --word_bank_path word_banks/japanese.csv --api_url http://localhost:8000/v1``, replacing api url with your url and the language/word bank with the appropriate values.
 6. 

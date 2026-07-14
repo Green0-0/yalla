@@ -69,11 +69,21 @@ def main():
                 print(f"Error: Row {row} has {len(row)} columns, expected 2")
                 continue
 
-            exert = row[0]
-            translation = row[1]
+            exert = row[0].strip()
+            translation = row[1].strip()
 
             if "[" not in exert or "]" not in exert:
                 print(f"Error: Row {row} has no \"[]\"")
+                continue
+
+            is_duplicate = False
+            for existing_sentence in data[idx].get("sentences", []):
+                if existing_sentence.get("exert", "").strip() == exert or existing_sentence.get("translation", "").strip() == translation:
+                    is_duplicate = True
+                    break
+            
+            if is_duplicate:
+                print(f"Skipping duplicate sentence for word {data[idx]['word']}")
                 continue
 
             data[idx]["sentences"].append({
