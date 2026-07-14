@@ -81,6 +81,7 @@ def main():
                     "translation": translation
                 })
 
+    os.makedirs(os.path.dirname(args.output_file), exist_ok=True)
     with open(args.output_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 

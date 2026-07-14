@@ -1,4 +1,4 @@
-from set_maker.utils import batch_generate, parse_csv
+from utils import batch_generate, parse_csv
 import argparse
 import json
 import os
@@ -42,7 +42,7 @@ def main():
         args.model
     )
 
-    all_dicts = []
+    chunk_dicts = []
     seen_words = set()
 
     for chunk, text in zip(chunks, texts):
@@ -55,6 +55,7 @@ def main():
         header = rows[0]
         data_rows = rows[1:]
         
+        current_chunk_dicts = []
         for row in data_rows:
             d = {}
             for i, val in enumerate(row):
@@ -72,10 +73,20 @@ def main():
             if word not in seen_words:
                 seen_words.add(word)
                 d["sentences"] = []
-                all_dicts.append(d)
+                current_chunk_dicts.append(d)
             else:
                 print(f"Error: Word {word} is already in the list")
+        
+        chunk_dicts.append(current_chunk_dicts)
 
+    all_dicts = []
+    max_len = max((len(c) for c in chunk_dicts), default=0)
+    for i in range(max_len):
+        for c_dicts in chunk_dicts:
+            if i < len(c_dicts):
+                all_dicts.append(c_dicts[i])
+
+    os.makedirs(os.path.dirname(args.output_file), exist_ok=True)
     with open(args.output_file, "w", encoding="utf-8") as f:
         json.dump(all_dicts, f, indent=4, ensure_ascii=False)
 
