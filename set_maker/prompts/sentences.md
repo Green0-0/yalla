@@ -20,3 +20,12 @@ exert | translation
 ... row 2 ...
 ... row N ...
 ```
+
+For example, if you were requested to do spanish, you might output something like
+```
+exert | translation
+El[The] gato[cat] duerme[sleeps]. | The cat sleeps.
+El[The] perro[dog] corre[runs] rápido[fast]. | The dog runs fast.
+El[The] gato[cat] corre[runs]. El[The] perro[dog] duerme[sleeps]. El[The] gato[cat] es[is] rápido[fast]. | The cat runs. The dog sleeps. The cat is fast.
+```
+Though obviously, your requested language might not be spanish.

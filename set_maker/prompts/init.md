@@ -17,3 +17,15 @@ word | definition | synonym | translation | explanation | alt1 | alt2 | alt3
 ... row 2 ...
 ... row N ...
 ```
+
+For example, if you were requested to do japanese, you might output something like
+```
+word | definition | synonym | translation | explanation | alt1 | alt2 | alt3
+私 | 自分自身を指す言葉 | =僕 | I / me | A general, polite word for "I" or "me" used by anyone. It is the most common first-person pronoun taught to beginners. | わたし | watashi | 
+が |  |  | subject marker | A grammatical particle used to mark the grammatical subject of a sentence. It highlights new information or the noun immediately preceding it. | ga |  | 
+水 | 冷たい飲み物、無色透明の液体 | =お冷 | water | Refers specifically to cold or room-temperature drinking water. Note that hot water has a completely different word in Japanese ("oyu"). | みず | mizu | 
+食べる | 食物を口に入れて飲み込むこと | =食う | to eat | A basic verb meaning to consume food. This is a standard "ru-verb" (Ichidan verb) used in everyday polite and casual conversation. | たべる | taberu | 
+美味しい | 味がいいこと | =うまい | delicious / tasty | An i-adjective used to describe food or drinks that taste very good. | おいしい | oishii |
+...
+```
+Though obviously, your requested language might not be japanese.

@@ -6,7 +6,7 @@ from openai import AsyncOpenAI
 
 MAX_RETRIES = 5
 
-MAX_CONCURRENT = 8
+MAX_CONCURRENT = 100
 
 async def _send_request(
     client: AsyncOpenAI,
@@ -37,7 +37,7 @@ async def _batch_generate_async(
         base_url=api_url,
         api_key=api_key,
         max_retries=MAX_RETRIES,
-        timeout=900.0,
+        timeout=1800.0,
     )
     semaphore = asyncio.Semaphore(MAX_CONCURRENT)
     total = len(inputs)
